@@ -1,0 +1,345 @@
+header {
+  min-height: 70px;
+  position: fixed;
+  background-color: var(--black);
+  box-shadow: 0 0 100px 25px rgba(30, 30, 66, 1);
+  z-index: 1;
+}
+
+header nav {
+  height: 58px;
+  width: 100%;
+  padding: 6px 15px;
+  position: relative;
+}
+header li {
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+header .logo-medium {
+  display: none;
+}
+
+.header-animation {
+  background-color: var(--black);
+  box-shadow: none;
+}
+
+/* NAV-DESKTOP */
+.nav-desktop .nav-links {
+  display: none;
+}
+
+.nav-buttons {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* MOBILE-NAV */
+nav.mobile-nav {
+  display: block;
+  position: fixed;
+  left: 0;
+  height: 4118px;
+  top: 0;
+  z-index: 5;
+  opacity: 95%;
+  background-color: var(--black);
+
+  width: 100vw;
+  padding: 0;
+}
+.mobile-nav .nav-links {
+  display: block;
+  width: 100vw;
+  padding: 0;
+  margin-top: auto;
+}
+.mobile-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  display: block;
+}
+.mobile-nav .drop-menu a:hover {
+  background-color: var(--dark-blue);
+  min-width: 100%;
+  opacity: 100%;
+}
+.mobile-nav .nav-links li {
+  width: 100%;
+  text-align: center;
+}
+.mobile-nav .nav-links {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 30px;
+  min-height: 488px;
+  gap: 20px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 40px 0;
+}
+.mobile-nav .nav-links li > a {
+  width: 190px;
+  margin: auto;
+}
+
+.mobile-nav .nav-links .nav-drop .drop-menu a {
+  color: var(--white);
+  font-size: 21px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.mobile-nav .nav-drop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.drop-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 190px;
+  margin: auto;
+}
+
+.mobile-drop-seta {
+  content: "";
+  height: 8px;
+  width: 12px;
+}
+.nav-drop:hover .drop-text .mobile-drop-seta {
+  transform: rotate(180deg);
+}
+
+.mobile-nav .nav-drop .drop-menu {
+  display: none;
+}
+.mobile-nav .nav-drop:hover .drop-menu {
+  display: block;
+}
+
+.mobile-icon {
+  height: 28px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-button {
+  height: 28px;
+  width: 40px;
+  position: relative;
+  z-index: 10;
+}
+.search-button {
+  height: 58px;
+  width: 58px;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 50%;
+  position: relative;
+  z-index: 6;
+}
+.search-button::after {
+  content: "";
+  position: absolute;
+
+  background: url("/img/lupa-icon.svg");
+  height: 22px;
+  width: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 20px;
+  left: 18px;
+}
+
+.mobile-button p {
+  display: none;
+}
+
+.mobile-nav {
+  transform: translateX(-100vw);
+  transition: 0.5s ease-in-out;
+}
+.mobile-nav.open {
+  transform: translateX(0);
+  transition: 0.5s ease-in-out;
+}
+
+.mobile-button.open .line1 {
+  transform: rotate(-45deg) translate(-40%, -50%);
+  transition: 0.1s;
+}
+.mobile-button.open .line2 {
+  opacity: 0;
+}
+.mobile-button.open .line3 {
+  transform: rotate(+45deg) translate(-50%, -50%);
+  transition: 0.1s;
+}
+
+.nav-links li > a:hover,
+.drop-text:hover {
+  border-bottom: 4px solid var(--light-blue);
+  padding-bottom: 10px;
+  transition: 0.1s;
+}
+
+@media (min-width: 750px) {
+  header {
+    min-height: 78px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  header .logo-medium {
+    display: block;
+    height: 38px;
+  }
+  header nav {
+    height: 60px;
+    box-shadow: none;
+  }
+
+  .mobile-button {
+    height: 52px;
+    width: 120px;
+    display: flex;
+    gap: 9px;
+    padding: 12px;
+    background-color: var(--black);
+    border-radius: 3px;
+    align-items: center;
+  }
+  .mobile-button p {
+    display: block;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .search-button {
+    padding: 30px;
+  }
+  .mobile-nav .nav-links {
+    display: flex;
+    width: 100vw;
+    padding-top: auto;
+  }
+}
+
+@media (min-width: 1366px) {
+  header nav.mobile-nav {
+    display: none;
+  }
+  header {
+    min-height: 104px;
+    background: transparent;
+  }
+  .mobile-button {
+    display: none;
+  }
+
+  header nav {
+    height: 75px;
+    margin: 15px 0;
+  }
+
+  header nav .nav-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 60px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  header nav .nav-links li a {
+    font-size: 18px;
+    color: var(--white);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-drop {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 20px;
+  }
+  .nav-drop::after {
+    content: "";
+    height: 8px;
+    width: 12px;
+    background: url("/img/seta-drop.svg");
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    left: 165px;
+  }
+  .nav-drop:hover::after {
+    transform: rotate(180deg);
+  }
+  .nav-drop:hover .drop-menu {
+    display: flex;
+  }
+
+  .nav-drop .drop-menu {
+    display: none;
+    background-color: var(--light-blue);
+    color: var(--white);
+    border-radius: 20px;
+    width: 288px;
+    min-height: 237px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 95%;
+    padding: 15px 0;
+    top: 60px;
+  }
+  .drop-menu::after {
+    content: "";
+    height: 4px;
+    width: 204px;
+    background-color: var(--light-blue);
+    border-radius: 100px;
+    position: absolute;
+    top: -3px;
+  }
+  .nav-drop .drop-menu a {
+    text-transform: none;
+    font-size: 21px;
+    font-weight: 500;
+    padding: 10px;
+  }
+  .nav-drop .drop-menu a:hover {
+    background-color: var(--dark-blue);
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-desktop .nav-links {
+    display: flex;
+  }
+}
